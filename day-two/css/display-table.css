@@ -1,0 +1,20 @@
+.table{
+    display: table;
+    border: 1px solid black;
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+} 
+.row{
+    display:table-row;
+}
+.header{
+    font-weight: bold; 
+    background-color: #f4f4f4; 
+}
+.cell{
+    display:table-cell;
+    padding: 10px;
+    text-align: left;
+    border-right: 1px solid black;
+}
