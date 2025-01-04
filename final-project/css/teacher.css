@@ -1,0 +1,68 @@
+.teacher{
+    margin-left: 150px;
+    display: flex;
+    width:900px;
+    height:520px;
+    margin-top: 150px;
+    border-radius: 20px;
+}
+
+.column {
+ flex: 50%;
+ padding: 5px;
+}
+
+.teacher .column .heading{
+    color:#0A033C;
+    font-weight: 700px;
+    font-size: 45px;
+    line-height: 55px;
+    /* background-color: #E4E2F4; */
+    width:400px;
+    text-align:left;
+    height:160px;
+    justify-content: center;
+    padding-top:18px;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+
+.teacher .column .content{
+    
+    width:500px;
+    margin-top: 30px;
+    font-weight: 400px;
+    font-size: 16px;
+    line-height: 30px;
+    color:#5D5A6F;
+    text-align: left;
+    height:90px;
+    margin-left: 60px;
+}
+
+/* .college .column .sub-content{
+    width:500px;
+    height:90px;
+    text-align: left;
+    font-weight: 400px;
+    color:#5D5A6F;
+    font-size: 16px;
+    line-height: 30px;
+    margin-left: 35px;
+    margin-top: 10px;
+} */
+
+.register{
+    width:200px;
+    height:60px;
+    color:white;
+    text-align:center;
+    border-radius: 10px;
+    background-color: #9C4DF4;
+    border:none;
+    margin-left: 60px;
+    margin-top: 45px;
+    font-weight: 500px;
+    font-size: 16px;
+    line-height: 20px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #0078d7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    .event-section {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .draggable {
+      width: 100px;
+      height: 100px;
+      background-color: #4caf50;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      margin: 20px auto;
+      cursor: grab;
+    }
+    .droppable {
+      width: 200px;
+      height: 200px;
+      border: 2px dashed #0078d7;
+      border-radius: 10px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f1f1f1;
+    }
+    .highlight {
+      background-color: #d1e7ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Drag and Drop Event Handlers</h1>
+  </header>
+  <main>
+    <div class="event-section">
+      <h2>Drag Events</h2>
+      <div class="draggable" id="draggable" draggable="true">Drag Me</div>
+      <div class="droppable" id="droppable">Drop Here</div>
+      <p id="eventOutput"></p>
+    </div>
+  </main>
+
+  <script>
+    const draggable = document.getElementById('draggable');
+    const droppable = document.getElementById('droppable');
+    const eventOutput = document.getElementById('eventOutput');
+
+    // Drag Start
+    draggable.addEventListener('dragstart', () => {
+      eventOutput.textContent = 'Drag Start: You started dragging the element.';
+      draggable.style.opacity = '0.5';
+    });
+
+    // Drag End
+    draggable.addEventListener('dragend', () => {
+      eventOutput.textContent = 'Drag End: You stopped dragging the element.';
+      draggable.style.opacity = '1';
+    });
+
+    // Drag Enter
+    droppable.addEventListener('dragenter', () => {
+      eventOutput.textContent = 'Drag Enter: Element entered the drop zone.';
+      droppable.classList.add('highlight');
+    });
+
+    // Drag Leave
+    droppable.addEventListener('dragleave', () => {
+      eventOutput.textContent = 'Drag Leave: Element left the drop zone.';
+      droppable.classList.remove('highlight');
+    });
+
+    // Drag Over
+    droppable.addEventListener('dragover', (event) => {
+      event.preventDefault();
+      eventOutput.textContent = 'Drag Over: Element is over the drop zone.';
+    });
+
+    // Drop
+    droppable.addEventListener('drop', (event) => {
+      event.preventDefault();
+      eventOutput.textContent = 'Drop: Element has been dropped into the drop zone.';
+      droppable.classList.remove('highlight');
+    });
+  </script>
+</body>
+</html>

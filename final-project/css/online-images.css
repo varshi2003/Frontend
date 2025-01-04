@@ -1,0 +1,39 @@
+.big-online-image{
+    width:1060px;
+    height:600px;
+    margin-left: 150px;
+}
+
+.boxes{
+    display:flex;
+    width:860px;
+    margin-left: 250px;
+    margin-top: -120px;
+}
+.box {
+    /* flex: 0.5; */
+    margin: 15px;
+    padding: 8px;
+   
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width:fit-content;
+    background: white;
+}
+
+.box .icon{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30%;
+}
+.box .text{
+    color:#0A033C;
+    font-weight: 600px;
+    line-height: 25px;
+    font-size: 25px;
+    margin-left: 12px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clipboard Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #6200ea;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    .event-section {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    p {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clipboard Events</h1>
+  </header>
+  <main>
+    <div class="event-section" id="copy-event">
+      <h2>Copy Event</h2>
+      <p>Use Case: Detect when text is copied.</p>
+      <textarea id="copyArea" placeholder="Copy some text from here..."></textarea>
+      <p id="copyResult"></p>
+    </div>
+
+    <div class="event-section" id="cut-event">
+      <h2>Cut Event</h2>
+      <p>Use Case: Detect when text is cut.</p>
+      <textarea id="cutArea" placeholder="Cut some text from here..."></textarea>
+      <p id="cutResult"></p>
+    </div>
+
+    <div class="event-section" id="paste-event">
+      <h2>Paste Event</h2>
+      <p>Use Case: Detect when text is pasted.</p>
+      <textarea id="pasteArea" placeholder="Paste some text here..."></textarea>
+      <p id="pasteResult"></p>
+    </div>
+  </main>
+
+  <script>
+    // Copy Event Listener
+    document.getElementById('copyArea').addEventListener('copy', () => {
+      document.getElementById('copyResult').textContent = 'Text has been copied.';
+    });
+
+    // Cut Event Listener
+    document.getElementById('cutArea').addEventListener('cut', () => {
+      document.getElementById('cutResult').textContent = 'Text has been cut.';
+    });
+
+    // Paste Event Listener
+    document.getElementById('pasteArea').addEventListener('paste', (event) => {
+      const pastedText = event.clipboardData.getData('text');
+      document.getElementById('pasteResult').textContent = `Text pasted: "${pastedText}"`;
+    });
+  </script>
+</body>
+</html>

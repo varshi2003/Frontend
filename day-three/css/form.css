@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* height: 100vh; */
+    background-color: #e6f7f1;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    color: #2d6a4f;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.form-box {
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    width: 450px;
+}
+
+.textup {
+    text-align: center;
+    color: #2d6a4f;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.textup i {
+    color: #2d6a4f;
+    margin-right: 8px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d6a4f;
+    margin-bottom: 6px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid #2d6a4f;
+    outline: none;
+}
+
+.radio-group {
+    display: flex;
+    /* gap: 5px; */
+    
+    margin:1px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 1px;
+    accent-color: #2d6a4f;
+    padding: 1px 1px 1px 1px;
+}
+
+
+
+button {
+    background-color: #2d6a4f;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #225b3c;
+    transform: translateY(-3px);
+}
+
+.check-box p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #17533f;
+    margin-bottom: 12px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-item label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #17533f;
+}
+
+
+textarea {
+    resize: none;
+}
