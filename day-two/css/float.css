@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('day-two\fonts\Oswald-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Oswald', serif;
+}
+
+.cont {
+    overflow: auto;
+    font-family: 'Oswald', serif;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    margin-right: 15px;
+    float: left;
+    overflow: auto;
+}

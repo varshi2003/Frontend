@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Selectors Example</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-title">Welcome to Selectors Demo</h1>
+
+    <p class="description">
+      This is a simple example to demonstrate JavaScript selectors.
+    </p>
+    <p class="description">Selectors help manipulate DOM elements.</p>
+
+    <div class="content">
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </div>
+
+    <button id="change-title">Change Title</button>
+    <button class="highlight-button">Highlight Descriptions</button>
+
+    <script>
+      // 1. Using getElementById to select the title and change its text
+      const title = document.getElementById("main-title");
+      const changeTitleButton = document.getElementById("change-title");
+      changeTitleButton.addEventListener("click", () => {
+        title.textContent = "Selectors in Action!";
+      });
+
+      // 2. Using getElementsByClassName to highlight descriptions
+      const highlightButton = document.querySelector(".highlight-button");
+      highlightButton.addEventListener("click", () => {
+        const descriptions = document.getElementsByClassName("description");
+        for (let description of descriptions) {
+          description.classList.add("highlight");
+        }
+      });
+
+      // 3. Using getElementsByTagName to log all list items
+      const listItems = document.getElementsByTagName("li");
+      console.log("List items:");
+      for (let item of listItems) {
+        console.log(item.textContent);
+      }
+
+      // 4. Using querySelector to select the first description
+      const firstDescription = document.querySelector(".description");
+      console.log("First description:", firstDescription.textContent);
+
+      // 5. Using querySelectorAll to select all list items and modify them
+      const allListItems = document.querySelectorAll("li");
+      allListItems.forEach((item, index) => {
+        item.textContent = `Modified Item ${index + 1}`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.footer {
+  width: 1200px;
+  color: #2d2d2d;
+  padding: 40px 20px;
+  margin-top: 80px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-brand {
+  flex: 1;
+  max-width: 300px;
+  margin-right: 20px;
+  line-height: 40px;
+  width: 50px;
+}
+
+.footer-brand h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #0a033c;
+  font-weight: 600px;
+  line-height: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #0a033c;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-links {
+  display: flex;
+  flex: 3;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links div {
+  flex: 1;
+  max-width: 200px;
+  margin: 10px;
+}
+
+.footer-links h3 {
+  color: #0a033c;
+  font-weight: 600px;
+  line-height: 22px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 5px;
+  line-height: 24px;
+}
+
+.footer-links ul li a {
+  color: #5d5a6f;
+  font-weight: 400px;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  font-size: 16px;
+  color: #5d5a6f;
+  margin-top: 10px;
+  font-weight: 400px;
+  line-height: 28px;
+}
+@media screen and (max-width: 480px) {
+  .footer-container {
+    margin-left: 100px;
+  }
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+  .footer-brand h2 {
+    font-size: 50px;
+    line-height: 36px;
+  }
+
+  .footer-links h3 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  .footer-links ul li a {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .footer p {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .footer-links {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .conatiner {
+    width: 100%;
+  }
+  .footer-container {
+    width: 100%;
+    /* margin-left: 150px; */
+  }
+}
+@media screen and (max-width: 1200px) {
+  .conatiner {
+    width: 100%;
+  }
+  .footer-container {
+    width: 100%;
+    margin-left: 100px;
+  }
+}
+

@@ -1,0 +1,243 @@
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.lessons {
+  margin-top: 120px;
+  width: 1280px;
+  height: 1000px;
+  margin-left: 100px;
+}
+
+.title {
+  color: #0a033c;
+  font-weight: 700px;
+  font-size: 45px;
+  line-height: 55px;
+  width: 600px;
+  height: 70px;
+  margin-left: 350px;
+  margin-top: 50px;
+}
+.content {
+  margin-left: 280px;
+  font-size: 18px;
+  width: 700px;
+  height: 60px;
+  color: #5d5a6f;
+  line-height: 30px;
+  align: center;
+  text-align: center;
+}
+.lessons .lessons-boxes{
+  width: 412px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 460px;
+}
+.lessons .leftmost {
+  float: left;
+  font-weight: 500px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #0a033c;
+  margin-right: 10px;
+}
+
+.lessons .middle {
+  width: 100px;
+  float: left;
+  background-color: #ff6652;
+  color: white;
+  align: center;
+  margin-top: -12px;
+  padding-top: 15px;
+  border-radius: 10px;
+  text-align: center;
+  height: 70%;
+}
+.lessons .rightmost {
+  float: left;
+  margin-left: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .lessons {
+    width: 100%;
+  }
+ 
+ 
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .lessons {
+    width: 100%;
+    margin-left: 80px !important;
+  }
+ 
+ 
+}
+@media screen and (max-width:780px){
+  .content{
+             font-size: 22px;
+             font-weight: 100px;
+             margin-bottom: 80px;
+  }
+  .lessons .leftmost {
+    
+    font-weight: 500px;
+    font-size: 24px;
+   
+  }
+  
+  .lessons .middle {
+    font-weight: 500px;
+    font-size: 24px;
+    width:150px;
+   
+   
+  }
+  .lessons .rightmost {
+    font-weight: 500px;
+    font-size: 24px;
+  }
+  .lessons .lessons-boxes{
+    margin-left: 400px;
+  }
+
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .lessons {
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 0;
+    height: auto;
+  }
+
+  .title {
+    font-size: 60px;
+    line-height: 60px;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .content {
+    margin-top: 30px;
+    margin-left: 60px;
+    width: 90%;
+    height: auto;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    color: #5d5a6f;
+  }
+
+  .lessons .boxes {
+    width: 80%;
+    height: auto;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .lessons .leftmost,
+  .lessons .middle,
+  .lessons .rightmost {
+    flex: 1 1 30%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .lessons .middle {
+    background-color: #ff6652;
+    color: white;
+    font-size: 40px;
+  }
+
+  .lessons .leftmost,
+  .lessons .rightmost {
+    font-size: 40px;
+    background-color: #f0f0f0;
+  }
+}
+
+@media (max-width: 320px) {
+  .lessons {
+    margin-top: 80px;
+    width: 1280px;
+    height: 1000px;
+    margin-left: 350px;
+  }
+  .title {
+    color: #0a033c;
+    font-weight: 700px;
+    font-size: 45px;
+    line-height: 55px;
+    width: 556px;
+    height: 70px;
+    margin-left: -250px;
+  }
+  .content {
+    margin-left: -280px;
+    width: 600px;
+    height: 60px;
+    color: #5d5a6f;
+    line-height: 30px;
+    align: center;
+    text-align: center;
+  }
+  .lessons .boxes {
+    width: 412px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: -130px;
+  }
+  .lessons .leftmost {
+    float: left;
+    font-weight: 500px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #0a033c;
+    margin-right: 10px;
+  }
+
+  .lessons .middle {
+    width: 100px;
+    float: left;
+    background-color: #ff6652;
+    color: white;
+    align: center;
+    margin-top: -12px;
+    padding-top: 15px;
+    border-radius: 10px;
+    text-align: center;
+    height: 70%;
+  }
+  .lessons .rightmost {
+    float: left;
+    margin-left: 10px;
+  }
+}
+

@@ -1,0 +1,31 @@
+.courses-button {
+  width: 202px;
+  height: 60px;
+  margin-left: 550px;
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-size: 16px;
+  color: white;
+  line-height: 20px;
+  align: center;
+  font-weight: 500px;
+  background-color: #9c4df4;
+  border: none;
+}
+@media screen and (max-width: 480px) {
+  .courses-button {
+    width: 30%;
+    height: 80px;
+    margin-left: 480px;
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .courses-button {
+    width: 25%;
+    height: 70px;
+    margin-left: 480px;
+    font-size: 28px;
+  }
+}

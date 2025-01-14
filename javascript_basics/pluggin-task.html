@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Data Plugin</title>
+    <style>
+      .item {
+        margin-left: 20px;
+      }
+      .key {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Display Data</h2>
+    <div id="output"></div>
+
+    <script>
+      function displayData(data, containerId) {
+        const container = document.getElementById(containerId); // Find the output area
+        container.innerHTML = ""; // Clear previous content
+
+        function createDisplay(item, parent) {
+          if (Array.isArray(item)) {
+            // Handle arrays
+            item.forEach((value, index) => {
+              const div = document.createElement("div");
+              div.textContent = `Item ${index + 1}:`;
+              parent.appendChild(div);
+              createDisplay(value, div); // Process nested items
+            });
+          } else if (typeof item === "object" && item !== null) {
+            // Handle objects
+            for (let key in item) {
+              const div = document.createElement("div");
+              div.innerHTML = `<span class="key">${key}:</span> `;
+              parent.appendChild(div);
+              createDisplay(item[key], div); // Process nested items
+            }
+          } else {
+            // Handle simple values
+            const div = document.createElement("div");
+            div.textContent = item;
+            parent.appendChild(div);
+          }
+        }
+
+        createDisplay(data, container); // Start processing the input data
+      }
+
+      // Example usage
+      const sampleData = {
+        name: "Alice",
+        age: 25,
+        skills: ["JavaScript", "HTML", "CSS"],
+        address: {
+          city: "New York",
+          zip: 10001,
+        },
+      };
+
+      displayData(sampleData, "output");
+    </script>
+  </body>
+</html>

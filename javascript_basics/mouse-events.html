@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Mouse Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #6200ea;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    .event-section {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px auto;
+      background-color: #6200ea;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 5px;
+    }
+    p {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JavaScript Mouse Events</h1>
+  </header>
+  <main>
+    <div class="event-section" id="mousedown-event">
+      <h2>Mousedown Event</h2>
+      <p>Use Case: Detect when the mouse button is pressed down over an element.</p>
+      <div class="box" id="mousedownBox">Click Me</div>
+      <p id="mousedownResult"></p>
+    </div>
+
+    <div class="event-section" id="mouseenter-event">
+      <h2>Mouseenter Event</h2>
+      <p>Use Case: Detect when the mouse enters an element.</p>
+      <div class="box" id="mouseenterBox">Hover Me</div>
+      <p id="mouseenterResult"></p>
+    </div>
+
+    <div class="event-section" id="mouseleave-event">
+      <h2>Mouseleave Event</h2>
+      <p>Use Case: Detect when the mouse leaves an element.</p>
+      <div class="box" id="mouseleaveBox">Hover Me</div>
+      <p id="mouseleaveResult"></p>
+    </div>
+
+    <div class="event-section" id="mousemove-event">
+      <h2>Mousemove Event</h2>
+      <p>Use Case: Track the mouse movement over an element.</p>
+      <div class="box" id="mousemoveBox">Move Mouse</div>
+      <p id="mousemoveResult"></p>
+    </div>
+
+    <div class="event-section" id="mouseover-event">
+      <h2>Mouseover Event</h2>
+      <p>Use Case: Detect when the mouse pointer is over an element.</p>
+      <div class="box" id="mouseoverBox">Hover Me</div>
+      <p id="mouseoverResult"></p>
+    </div>
+
+    <div class="event-section" id="mouseout-event">
+      <h2>Mouseout Event</h2>
+      <p>Use Case: Detect when the mouse pointer leaves an element.</p>
+      <div class="box" id="mouseoutBox">Hover Me</div>
+      <p id="mouseoutResult"></p>
+    </div>
+
+    <div class="event-section" id="mouseup-event">
+      <h2>Mouseup Event</h2>
+      <p>Use Case: Detect when the mouse button is released over an element.</p>
+      <div class="box" id="mouseupBox">Release Me</div>
+      <p id="mouseupResult"></p>
+    </div>
+  </main>
+
+  <script>
+    // Mousedown Event Listener
+    document.getElementById('mousedownBox').addEventListener('mousedown', () => {
+      document.getElementById('mousedownResult').textContent = 'Mousedown event triggered!';
+    });
+
+    // Mouseenter Event Listener
+    document.getElementById('mouseenterBox').addEventListener('mouseenter', () => {
+      document.getElementById('mouseenterResult').textContent = 'Mouse entered the box!';
+    });
+
+    // Mouseleave Event Listener
+    document.getElementById('mouseleaveBox').addEventListener('mouseleave', () => {
+      document.getElementById('mouseleaveResult').textContent = 'Mouse left the box!';
+    });
+
+    // Mousemove Event Listener
+    document.getElementById('mousemoveBox').addEventListener('mousemove', (event) => {
+      document.getElementById('mousemoveResult').textContent = `Mouse is at (${event.offsetX}, ${event.offsetY})`;
+    });
+
+    // Mouseover Event Listener
+    document.getElementById('mouseoverBox').addEventListener('mouseover', () => {
+      document.getElementById('mouseoverResult').textContent = 'Mouse is over the box!';
+    });
+
+    // Mouseout Event Listener
+    document.getElementById('mouseoutBox').addEventListener('mouseout', () => {
+      document.getElementById('mouseoutResult').textContent = 'Mouse left the box!';
+    });
+
+    // Mouseup Event Listener
+    document.getElementById('mouseupBox').addEventListener('mouseup', () => {
+      document.getElementById('mouseupResult').textContent = 'Mouseup event triggered!';
+    });
+  </script>
+</body>
+</html>

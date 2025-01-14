@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms using HTML and CSS</title>
+        <link rel="stylesheet" href="../day-three/css/form.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        </style>
+        
+    </head>
+    <body>
+       
+        <div class="form-box">
+            <h2 style="text-align: center;">Registration Form</h2>
+            <div class="textup">
+                <i class="fas fa-clock"></i>
+                It's urgent
+            </div>
+            <form>
+                <label for="uname">
+                    <i class="fas fa-user"></i> Name
+                </label>
+                <input type="text" id="uname" name="uname" placeholder="Enter your name" required>
+    
+                <label for="email">
+                    <i class="fas fa-envelope"></i> Email Address
+                </label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+                <label for="phone">
+                    <i class="fas fa-phone"></i> Phone No
+                </label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    
+                <label>
+                    <i class="fas fa-smile"></i> Are you satisfied with our service?
+                </label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" name="satisfy" value="yes" checked>
+                    <label for="yes">Yes</label>
+    
+                    <input type="radio" id="no" name="satisfy" value="no">
+                    <label for="no">No</label>
+                </div>
+    
+                <div class="check-box">
+                    <p>Select the location you want to go:</p>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="Coimbatore" name="Coimbatore" value="Coimbatore">
+                            <label for="Coimbatore">Coimbatore</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="Chennai" name="Chennai" value="Chennai">
+                            <label for="Chennai">Chennai</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="Bangalore" name="Bangalore" value="Bangalore">
+                            <label for="Bangalore">Bangalore</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                <label for="msg">
+                    <i class="fas fa-comments"></i> Write your suggestions:
+                </label>
+            </div>
+                <textarea id="msg" name="msg" rows="4" placeholder="Your message here" required></textarea>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
