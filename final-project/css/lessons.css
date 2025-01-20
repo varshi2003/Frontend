@@ -58,6 +58,9 @@
   text-align: center;
   height: 70%;
 }
+.lessons .middle:hover{
+  background-color: #7b3cd1;
+}
 .lessons .rightmost {
   float: left;
   margin-left: 10px;
@@ -130,12 +133,12 @@
   }
 
   .title {
-    font-size: 60px;
+    font-size: 70px;
     line-height: 60px;
     width: 100%;
     text-align: center;
     margin-left: 0;
-    margin-top: 40px;
+    margin-top: 70px;
   }
 
   .content {
@@ -149,15 +152,12 @@
     color: #5d5a6f;
   }
 
-  .lessons .boxes {
-    width: 80%;
-    height: auto;
-    margin: 60px auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
+  .lessons .lessons-boxes{
+    width: 800px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 260px;
   }
 
   .lessons .leftmost,
@@ -173,6 +173,8 @@
     background-color: #ff6652;
     color: white;
     font-size: 40px;
+    width:300px !important;
+    height:50px;
   }
 
   .lessons .leftmost,
@@ -182,62 +184,5 @@
   }
 }
 
-@media (max-width: 320px) {
-  .lessons {
-    margin-top: 80px;
-    width: 1280px;
-    height: 1000px;
-    margin-left: 350px;
-  }
-  .title {
-    color: #0a033c;
-    font-weight: 700px;
-    font-size: 45px;
-    line-height: 55px;
-    width: 556px;
-    height: 70px;
-    margin-left: -250px;
-  }
-  .content {
-    margin-left: -280px;
-    width: 600px;
-    height: 60px;
-    color: #5d5a6f;
-    line-height: 30px;
-    align: center;
-    text-align: center;
-  }
-  .lessons .boxes {
-    width: 412px;
-    height: 50px;
-    border-radius: 10px;
-    margin-top: 40px;
-    margin-left: -130px;
-  }
-  .lessons .leftmost {
-    float: left;
-    font-weight: 500px;
-    font-size: 16px;
-    line-height: 20px;
-    color: #0a033c;
-    margin-right: 10px;
-  }
 
-  .lessons .middle {
-    width: 100px;
-    float: left;
-    background-color: #ff6652;
-    color: white;
-    align: center;
-    margin-top: -12px;
-    padding-top: 15px;
-    border-radius: 10px;
-    text-align: center;
-    height: 70%;
-  }
-  .lessons .rightmost {
-    float: left;
-    margin-left: 10px;
-  }
-}
 

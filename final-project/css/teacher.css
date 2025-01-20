@@ -57,6 +57,9 @@
   font-size: 16px;
   line-height: 20px;
 }
+.register-teacher:hover{
+  background-color: #ff6652;
+}
 .column.left-image {
   background-image: url("../images/Image (2).png");
   background-repeat: no-repeat;
@@ -81,14 +84,7 @@
 
   }
 }
-@media screen and (max-width: 320px) {
-  .column.left-image {
-    background-image: none;
-  }
-  .teacher {
-    margin-left: -250px;
-  }
-}
+
 @media screen and (max-width: 480px) {
   .container {
     width: 100%;
@@ -101,13 +97,13 @@
     height: 640px;
   }
   .register-teacher {
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     margin-left: 60px !important;
-    font-size: 30px;
-    width: 300px;
+    font-size: 40px;
+    width: 400px;
   }
   .teacher .column .content {
-    font-size: 38px;
+    font-size: 36px;
     line-height: 44px;
     height: 270px;
   }

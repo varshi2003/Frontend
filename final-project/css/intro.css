@@ -99,79 +99,81 @@
 .search-icon {
   margin-right: 5px;
 }
-
 @media screen and (max-width: 480px) {
   .container {
     width: 100%;
-    margin: 0 auto;
+    padding: 0 10px;
   }
+
   .intro {
-    width: 100%;
     flex-direction: column;
+    width: 100%;
     align-items: center;
   }
+
   .column {
     width: 100%;
-    padding: 10px;
+    padding: 0;
   }
+
   .column .left {
-    height: 100px;
-    width: 50%;
-    border-radius: 30px;
+    width: 80%;
+    height: auto;
     margin-top: 20px;
-    margin-left: 300px;
+    border-radius: 15px;
   }
 
   .column .left a {
-    color: #ff6652;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 500px;
-    font-size: 50px;
-    margin-left: -15px;
+    font-size: 18px;
+    margin-left: 0;
   }
-  .column.right {
-    display: none;
-  }
+
   .heading {
-    margin-left: 100px;
-    width: 90%;
-    font-size: 60px;
+    font-size: 70px;
     line-height: 80px;
-    font-weight: 700;
     text-align: center;
+    margin-top: 60px;
+  }
+
+  div .subheading {
+    text-align: center;
+    margin-bottom: 30px;
     margin-top: 40px;
-  }
-  .subheading {
-    margin-left: 100px;
-    width: 90%;
-    font-size: 45px;
-    line-height: 55px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
+    font-size: 40px !important;
+    line-height: 60px;
+    margin-left: 30px;
+}
+
   .search-bar {
-    margin-left: 120px;
     flex-direction: column;
-    width: 80%;
-    max-width: 90%;
+    width: 90%;
     height: auto;
     padding: 10px;
+    margin-left: 360px;
   }
+
   .input-field {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 30px;
+    margin-bottom: 20px;
+    padding: 8px;
+    font-size: 30px !important;
   }
+
   .search-button {
     width: 100%;
-    height: auto;
-    font-size: 30px;
-    padding: 15px;
+    height: 55px;
+    font-size: 30px !important;
+    margin-right: 0;
+    margin-left: 10px !important;
+  }
+
+  .column.right {
+    height: 200px;
+    background-size: cover;
   }
 }
+
+ 
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;;

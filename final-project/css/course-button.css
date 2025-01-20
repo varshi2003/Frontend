@@ -13,12 +13,15 @@
   background-color: #9c4df4;
   border: none;
 }
+.courses-button:hover {
+  background-color: #ff6652;
+}
 @media screen and (max-width: 480px) {
   .courses-button {
-    width: 30%;
-    height: 80px;
+    width: 500px !important;
+    height: 200px;
     margin-left: 480px;
-    font-size: 40px;
+    font-size: 50px !important;
   }
 }
 @media screen and (max-width: 768px) {

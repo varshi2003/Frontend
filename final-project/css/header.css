@@ -35,7 +35,7 @@ body {
   text-decoration: none;
   font-weight: 1000px;
   color: #0a033c;
-  font-size: 50px;
+  font-size: 20px;
   padding: 10px;
   border: #0a033c;
   font-weight: 500px;
@@ -178,6 +178,7 @@ body {
   }
   .logo img {
     width: 300px;
+    height:100px;
   }
   .menu a,
   .dropdown .dropbtn,
@@ -189,18 +190,3 @@ body {
   }
 }
 
-@media (max-width: 320px) {
-  .menu a,
-  .dropdown .dropbtn,
-  .right a {
-    font-size: 10px;
-    padding: 5px;
-  }
-  .logo img {
-    width: 60px;
-  }
-  .container {
-    width: 100%;
-    padding: 16px;
-  }
-}

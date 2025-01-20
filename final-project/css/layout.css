@@ -66,57 +66,7 @@
 
 }
 
-@media screen and (max-width: 320px) {
-  .layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    margin-top: -680px;
-    width: 400px;
-    margin-left: 180px;
-  }
 
-  .layout .box {
-    padding-top: 15px;
-    margin-top: 10px;
-    border-radius: 20px;
-    width: 220px;
-    height: 260px;
-    flex-direction: column;
-    text-align: center;
-  }
-  .layout .box h2 {
-    color: #0a033c;
-    font-weight: 600px;
-    font-size: 25px;
-  }
-
-  .layout .box p {
-    color: #5d5a6f;
-    margin-top: 2px;
-    font-weight: 400px;
-    font-size: 16px;
-    line-height: 20px;
-  }
-  .box button {
-    border: 1px solid #9c4df4;
-    color: #9c4df4;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 500px;
-    margin-left: 20px;
-  }
-
-  .layout .box button:hover {
-    background-color: #9c4df4;
-    color: white;
-  }
-}
 @media screen and (max-width: 1024px) {
   .container {
     width: 100%;
@@ -136,8 +86,9 @@
   .wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
+    margin-top:70px;
     width: 100%;
+    margin-left: 20px;
   }
 
   .layout .box {
@@ -150,18 +101,18 @@
   }
 
   .layout .box h2 {
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 10px;
   }
 
   .layout .box p {
-    font-size: 35px;
+    font-size: 40px;
     line-height: 50px;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .box button {
-    font-size: 35px;
+    font-size: 45px;
     padding: 8px 15px;
     margin-top: 20px;
   }
@@ -182,3 +133,4 @@
     background-color: #7b3cd1;
   }
 }
+

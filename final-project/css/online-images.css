@@ -149,7 +149,7 @@
   .big-online-image {
     width: 100%;
     height: auto;
-    margin-left: 0;
+    margin-left: 100 px;
   }
 
   .boxes {

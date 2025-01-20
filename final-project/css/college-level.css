@@ -71,6 +71,9 @@
   font-size: 16px;
   line-height: 20px;
 }
+.register:hover{
+  background-color: #ff6652;
+}
 .column.image {
   background-image: url("../images/laptop-user.png");
   background-repeat: no-repeat;
@@ -123,15 +126,6 @@
   }
   
 }
-@media screen and (max-width: 320px) {
-  .college {
-    width: 600px;
-    margin-left: 100px;
-  }
-  .column.image {
-    background-image: none;
-  }
-}
 @media screen and (max-width: 480px) {
   .container {
     width: 100%;
@@ -141,9 +135,9 @@
   .college {
     flex-direction: column;
     width: 100%;
-    height: 450px;
-    margin-left: 10px !important;
-    border-radius: 10px;
+    height: 600px;
+    margin-left: 50px !important;
+    border-radius: 20px;
   }
 
   .column {
@@ -162,8 +156,8 @@
   }
 
   .college .column .content {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 50px;
+    line-height: 50px;
     width: 100%;
     height: auto;
     margin: 30px 0;
@@ -171,8 +165,8 @@
   }
 
   .college .column .sub-content {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 44px;
+    line-height: 50px;
     width: 100%;
     height: auto;
     margin: 10px 0;
@@ -180,8 +174,8 @@
   }
 
   .register {
-    font-size: 30px !important;
-    width: 300px !important;
+    font-size: 40px !important;
+    width: 350px !important;
     height: 100px;
     margin-left: 500px !important;
   }
@@ -193,4 +187,5 @@
     border-radius: 10px;
   }
 }
+
 

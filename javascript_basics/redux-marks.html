@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marks Calculator with Redux</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .input-group {
+        margin-bottom: 10px;
+      }
+      label {
+        margin-right: 10px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Marks Calculator</h1>
+    <div class="container" id="marksContainer"></div>
+
+    <div>
+      <button id="calculateTotal">Calculate Total</button>
+      <button id="calculateAverage">Calculate Average</button>
+      <button id="calculatePercentage">Calculate Percentage</button>
+      <button id="generateLists">Generate Lists</button>
+    </div>
+
+    <div class="result">
+      <p id="total">Total: 0</p>
+      <p id="average">Average: 0</p>
+      <p id="percentage">Percentage: 0%</p>
+      <p id="list_in_100">List in 100: []</p>
+      <p id="list_in_200">List in 200: []</p>
+    </div>
+
+    <script>
+      // Redux-like store implementation
+      const createStore = (reducer) => {
+        let state = reducer(undefined, { type: "__INIT__" });
+        let listeners = [];
+
+        const getState = () => state;
+
+        const dispatch = (action) => {
+          state = reducer(state, action);
+          listeners.forEach((listener) => listener());
+        };
+
+        const subscribe = (listener) => {
+          listeners.push(listener);
+          return () => {
+            listeners = listeners.filter((l) => l !== listener);
+          };
+        };
+
+        return { getState, dispatch, subscribe };
+      };
+
+      // Initial state
+      const initialState = {
+        marks: [0, 0, 0, 0, 0],
+        total: 0,
+        average: 0,
+        percentage: 0,
+        list_in_100: [],
+        list_in_200: [],
+      };
+
+      // Reducer function
+      const marksReducer = (state = initialState, action) => {
+        switch (action.type) {
+          case "UPDATE_MARKS": {
+            const updatedMarks = [...state.marks];
+            updatedMarks[action.payload.index] = action.payload.value;
+            return { ...state, marks: updatedMarks };
+          }
+          case "CALCULATE_TOTAL": {
+            const total = state.marks.reduce((sum, mark) => sum + mark, 0);
+            return { ...state, total };
+          }
+          case "CALCULATE_AVERAGE": {
+            const total = state.marks.reduce((sum, mark) => sum + mark, 0);
+            const average = total / state.marks.length;
+            return { ...state, average };
+          }
+          case "CALCULATE_PERCENTAGE": {
+            const total = state.marks.reduce((sum, mark) => sum + mark, 0);
+            const percentage = (total / (state.marks.length * 100)) * 100;
+            return { ...state, percentage };
+          }
+          case "GENERATE_LISTS": {
+            const list_in_100 = [...state.marks];
+            const list_in_200 = state.marks.map((mark) => mark * 2);
+            return { ...state, list_in_100, list_in_200 };
+          }
+          default:
+            return state;
+        }
+      };
+
+      // Create the store
+      const store = createStore(marksReducer);
+
+      // Rendering the DOM elements
+      const render = () => {
+        const state = store.getState();
+
+        // Update total, average, percentage, and lists
+        document.getElementById("total").textContent = `Total: ${state.total}`;
+        document.getElementById(
+          "average"
+        ).textContent = `Average: ${state.average.toFixed(2)}`;
+        document.getElementById(
+          "percentage"
+        ).textContent = `Percentage: ${state.percentage.toFixed(2)}%`;
+        document.getElementById(
+          "list_in_100"
+        ).textContent = `List in 100: [${state.list_in_100.join(", ")}]`;
+        document.getElementById(
+          "list_in_200"
+        ).textContent = `List in 200: [${state.list_in_200.join(", ")}]`;
+
+        // Update input values
+        state.marks.forEach((mark, index) => {
+          const inputElement = document.getElementById(`mark${index}`);
+          if (inputElement) inputElement.value = mark;
+        });
+      };
+
+      // Initial HTML setup
+      const setupDOM = () => {
+        const container = document.getElementById("marksContainer");
+        const state = store.getState();
+
+        // Generate input fields dynamically based on the number of marks
+        state.marks.forEach((mark, index) => {
+          const inputGroup = document.createElement("div");
+          inputGroup.classList.add("input-group");
+
+          const label = document.createElement("label");
+          label.textContent = `Subject ${index + 1}:`;
+
+          const input = document.createElement("input");
+          input.type = "number";
+          input.id = `mark${index}`;
+          input.value = mark;
+          input.addEventListener("input", (event) => {
+            const value = parseInt(event.target.value) || 0;
+            store.dispatch({ type: "UPDATE_MARKS", payload: { index, value } });
+          });
+
+          inputGroup.appendChild(label);
+          inputGroup.appendChild(input);
+          container.appendChild(inputGroup);
+        });
+      };
+
+      // Event listeners for buttons
+      document
+        .getElementById("calculateTotal")
+        .addEventListener("click", () => {
+          store.dispatch({ type: "CALCULATE_TOTAL" });
+        });
+
+      document
+        .getElementById("calculateAverage")
+        .addEventListener("click", () => {
+          store.dispatch({ type: "CALCULATE_AVERAGE" });
+        });
+
+      document
+        .getElementById("calculatePercentage")
+        .addEventListener("click", () => {
+          store.dispatch({ type: "CALCULATE_PERCENTAGE" });
+        });
+
+      document.getElementById("generateLists").addEventListener("click", () => {
+        store.dispatch({ type: "GENERATE_LISTS" });
+      });
+
+      // Subscribe to store changes
+      store.subscribe(render);
+
+      // Initialize the DOM and dispatch the initial render
+      setupDOM();
+      store.dispatch({ type: "__INIT__" });
+    </script>
+  </body>
+</html>
