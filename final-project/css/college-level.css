@@ -79,6 +79,28 @@
   width: 625px;
   height: 550px;
 }
+@media screen and (max-width:768px){
+  .college .column .heading{
+    font-size: 24px;
+    font-weight: 300;
+  }
+  .college .column .heading {
+            margin-bottom: 0px !important;
+  }
+  .college .column .content {
+    
+    margin-bottom: 0px;
+   
+  }
+  .college .column .sub-content {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .register{
+    font-size: 20px;
+  }
+  
+}
 @media screen and (max-width: 1200px) {
   .container{
     width:100%;

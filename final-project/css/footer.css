@@ -96,6 +96,16 @@
   font-weight: 400px;
   line-height: 28px;
 }
+@media screen and (max-width:768px)
+{
+  .footer-links ul li a {
+   
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 18px;
+    
+  }
+}
 @media screen and (max-width: 480px) {
   .footer-container {
     margin-left: 100px;

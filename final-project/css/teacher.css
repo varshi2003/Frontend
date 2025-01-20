@@ -69,7 +69,18 @@
   margin-top: 40px;
 }
 
+@media screen and (max-width:768px)
+{
+  .teacher .column .content{
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .register-teacher{
+    width:40%;
+    font-size: 24px;
 
+  }
+}
 @media screen and (max-width: 320px) {
   .column.left-image {
     background-image: none;
