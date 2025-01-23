@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        #app {
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home" data-link>Home</a>
+        <a href="about" data-link>About</a>
+        <a href="contact" data-link>Contact</a>
+    </nav>
+    <div id="app">Loading...</div>
+
+    <script>
+        // Define routes and corresponding module paths
+        const routes = {
+            '/home': 'modules/home.js',
+            '/about': 'modules/about.js',
+            '/contact': 'modules/contact.js',
+        };
+
+        // Function to navigate to a route
+        const navigateTo = url => {
+            history.pushState(null, null, `/${url}`);
+            router();
+        };
+
+        // Router function to load the appropriate module
+        const router = async () => {
+            let path = window.location.pathname;
+            
+            // Default to home if the route is not found
+            if (!routes[path]) {
+                path = '/home';
+                history.replaceState(null, null, path);
+            }
+
+            const modulePath = routes[path];
+
+            try {
+                const module = await import(`./${modulePath}`);
+                document.getElementById('app').innerHTML = module.default();
+            } catch (error) {
+                console.error('Error loading module:', error);
+                document.getElementById('app').innerHTML = `<h1>Error</h1><p>Failed to load page.</p>`;
+            }
+        };
+
+        // Event listener for navigation links
+        document.body.addEventListener('click', e => {
+            if (e.target.matches('[data-link]')) {
+                e.preventDefault();
+                navigateTo(e.target.getAttribute('href'));
+            }
+        });
+
+        // Handle back/forward browser navigation
+        window.addEventListener('popstate', router);
+
+        // Initialize the app
+        router();
+    </script>
+</body>
+</html>

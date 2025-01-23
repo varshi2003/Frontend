@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Ensure body spans the full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        nav {
+            background-color: black;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+    
+        nav a:hover {
+            background-color: grey;
+        }
+    
+        nav a.active {
+            background-color: grey;
+        }
+    
+        #content {
+            width: 100%; /* Ensures full-width container for centering */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Full height for centering */
+        }
+    
+        .update-marks-container {
+            max-width: 500px;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+    
+        .update-marks-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+    
+        .update-marks-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    
+        .input-container {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #495057;
+        }
+    
+        input {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 100%; /* Adjusted to take full width */
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+    
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+    
+        .submit-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    
+        .submit-btn:disabled {
+            background-color: #d6d6d6;
+            cursor: not-allowed;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1 style="text-align: center;">Marks Calculator</h1>
+    <nav>
+        <a href="javascript:void(0);" data-module="Marks"> Marks</a>
+        <a href="javascript:void(0);" data-module="results">Results</a>
+        <a href="javascript:void(0);" data-module="Test">Test</a>
+    </nav>
+    <div id="content"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
